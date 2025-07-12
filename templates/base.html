@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>Tanmoy Acharjee</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body style="overflow-y: scroll;">
+
+  {% block content %}{% endblock %}
+  <script src="{% static 'js/main.js' %}"></script>
+  <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+    AOS.init({
+        duration: 800,
+        offset: 60,
+        easing: 'ease-in-out',
+        once: true,
+    });
+    </script>
+<!-- 🌫 Subtle Noise Overlay -->
+<div class="noise-overlay"></div>
+
+</body>
+</html>
