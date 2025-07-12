@@ -121,6 +121,7 @@ USE_TZ = True
 import os
 
 STATIC_URL = '/static/'
+
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 TEMPLATES[0]['DIRS'] = [os.path.join(BASE_DIR, 'templates')]
@@ -130,3 +131,7 @@ TEMPLATES[0]['DIRS'] = [os.path.join(BASE_DIR, 'templates')]
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+import os
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # <- this is required for collectstatic
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
